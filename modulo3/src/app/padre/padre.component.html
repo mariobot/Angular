@@ -1,0 +1,8 @@
+<p>Elemento padre</p>
+
+<input type="text" (change)="textoPadre = $event.target.value">
+
+<p>Elemento hijo</p>
+
+<app-hijo [textoHijo]="textoPadre"></app-hijo>
+<hr>

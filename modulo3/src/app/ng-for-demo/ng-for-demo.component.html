@@ -1,0 +1,15 @@
+<p>Example for</p>
+
+<table>
+    <tr>
+        <td>Indice</td>
+        <td>Nombre</td>
+        <td>Edad</td>
+    </tr>
+    <tr *ngFor="let persona of personas; let indice = index">
+        <td>{{indice}}</td>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.edad}}</td>
+    </tr>
+</table>
+<hr>
