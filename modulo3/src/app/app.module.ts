@@ -17,6 +17,8 @@ import { HijoComponent } from './hijo/hijo.component';
 import { VarRefPlantillaDemoComponent } from './var-ref-plantilla-demo/var-ref-plantilla-demo.component';
 import { PadreViewChildComponent } from './padre-view-child/padre-view-child.component';
 import { HijoViewChildComponent } from './hijo-view-child/hijo-view-child.component';
+import { PadreProyectadoComponent } from './padre-proyectado/padre-proyectado.component';
+import { HijoProyectadoComponent } from './hijo-proyectado/hijo-proyectado.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HijoViewChildComponent } from './hijo-view-child/hijo-view-child.compon
     HijoComponent,
     VarRefPlantillaDemoComponent,
     PadreViewChildComponent,
-    HijoViewChildComponent
+    HijoViewChildComponent,
+    PadreProyectadoComponent,
+    HijoProyectadoComponent
   ],
   imports: [
     BrowserModule,
