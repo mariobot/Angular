@@ -14,6 +14,9 @@ import { NgForDemoComponent } from './ng-for-demo/ng-for-demo.component';
 import { NgSwitchDemoComponent } from './ng-switch-demo/ng-switch-demo.component';
 import { PadreComponent } from './padre/padre.component';
 import { HijoComponent } from './hijo/hijo.component';
+import { VarRefPlantillaDemoComponent } from './var-ref-plantilla-demo/var-ref-plantilla-demo.component';
+import { PadreViewChildComponent } from './padre-view-child/padre-view-child.component';
+import { HijoViewChildComponent } from './hijo-view-child/hijo-view-child.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { HijoComponent } from './hijo/hijo.component';
     NgForDemoComponent,
     NgSwitchDemoComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    VarRefPlantillaDemoComponent,
+    PadreViewChildComponent,
+    HijoViewChildComponent
   ],
   imports: [
     BrowserModule,
