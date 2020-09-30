@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { WebApiService } from '../services/web-api.service';
+import { Usuario } from '../models/usuario';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,12 +10,17 @@ import { Router } from '@angular/router';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private serviceWebApi: WebApiService) { }
 
+  usuarios : Usuario[];
   ngOnInit(): void {
+    this.serviceWebApi.obtenerUsuarios().subscribe(
+        (usuariosDelApi: Usuario[]) => this.usuarios = usuariosDelApi,
+        error => console.error(error)
+      );
   }
 
-  navegarPosts(){
-    this.router.navigate(['/posts']);
+  navegarPosts(id : number){
+    this.router.navigate(['/usuarios', id,'/posts']);
   }
 }

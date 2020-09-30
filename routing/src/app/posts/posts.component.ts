@@ -1,20 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
+import { WebApiService } from '../services/web-api.service';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private serviceWebApi: WebApiService
+  ) {}
 
-  constructor(private router: Router) { }
-
+  posts: Post[];
   ngOnInit(): void {
+    this.route.data.subscribe((data: { posts: Post[] }) => {
+      this.posts = data.posts;
+    });
   }
 
-  navegarUsuarios(){
+  navegarHaciaUsuarios() {
     this.router.navigate(['/usuarios']);
   }
-
 }
