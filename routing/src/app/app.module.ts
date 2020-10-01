@@ -9,9 +9,10 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { PostsModule } from './posts/posts.module';
 import { BotonPanicoComponent } from './boton-panico/boton-panico.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, BotonPanicoComponent, ContactoComponent],
+  declarations: [AppComponent, MenuComponent, BotonPanicoComponent, ContactoComponent, LoginComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

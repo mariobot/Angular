@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
+  enviado = false;
+  mensaje: string;
   constructor() { }
 
-  ngOnInit(): void {
+  enviar() {
+    alert('mensaje enviado: ' + this.mensaje);
+    this.enviado = true;
+  }
+
+  permitirSalirDeRuta(): boolean | import("rxjs").Observable<boolean> | Promise<boolean> {
+    if (!this.mensaje || this.enviado) {
+      return true;
+    }
+
+    const confirmacion = window.confirm('¿Quieres salir del formulario y perder los cambios realizados?');
+    return confirmacion;
+  }
+
+
+  ngOnInit() {
   }
 
 }

@@ -17,9 +17,9 @@ export class PostsComponent implements OnInit {
 
   posts: Post[];
   ngOnInit(): void {
-    this.route.data.subscribe((data: { posts: Post[] }) => {
-      this.posts = data.posts;
-    });
+    this.serviceWebApi.obtenerPosts().subscribe((postsApi: Post[]) => {
+      this.posts = postsApi;
+    }, error => console.log(error));
   }
 
   navegarHaciaUsuarios() {
