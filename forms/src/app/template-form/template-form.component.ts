@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Registro } from '../models/registro';
+import { Suscripcion } from '../models/suscripcion.enum';
 
 @Component({
   selector: 'app-template-form',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateFormComponent implements OnInit {
 
+  model : Registro = { username: '', password: '', suscripcion: Suscripcion.Gratuita, promociones: true};
+  suscripciones: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    for (let item in Suscripcion) {
+      if (isNaN(Number(item))) {
+        this.suscripciones.push({ text: item, value: Suscripcion[item] });
+      }
+    }
+  }
+
+  submit(){
+    console.log(this.model);
+  }
+
+  refrescar()
+  {
+    this.model = { username: '', password: '', suscripcion: Suscripcion.Gratuita, promociones: true };
   }
 
 }
